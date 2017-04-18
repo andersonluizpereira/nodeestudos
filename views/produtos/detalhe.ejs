@@ -10,16 +10,18 @@
                         <td><a href="">Título</a></td>
                         <td><a href="">Preço</a></td>
                         <td><a href="">Descrição</a></td>
+                        <td><a href="">Ações</a></td>
                     </tr>
                     </thead>
                     <tbody>
                       
                         <% livros.map(function(livro) { %>
                         <tr>
-                            <td><a href="/produtos/<%= livro.id %>" class="btn btn-info"><%= livro.id %></a></td>
+                            <td><%= livro.id %></td>
                             <td><%= livro.titulo %></td>
                             <td><%= livro.preco %></td>
                             <td><p><%= livro.descricao %></p></td>
+                            <td><a href="/produtos/<%= livro.id %>" class="btn btn-info"><%= livro.id %>Editar</a><a href="/produtos/<%= livro.id %>" class="btn btn-warning"><%= livro.id %>Excluir</a></td>
                         </tr>
                       <% }) %>
                     </tbody>
