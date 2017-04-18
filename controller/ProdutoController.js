@@ -6,6 +6,34 @@ class ProdutoController {
     console.log('AE');
   }
 
+
+exclui(req, res) {
+    let connection = connectionFactory()
+    let produtoDao = new ProdutoDao(connection)
+    let salvo = req.query.salvo
+    let id =  req.params.id
+  //  console.log(req.params.id)
+
+    produtoDao.exclui(id,function(err,result, fields) {
+      
+     // var livro = {livros : result}
+     // console.log(livro)
+      
+      res.format({
+        html : () => {
+           res.redirect('/produtos?salvo=true')
+        },
+        json : () => {
+          res.json(result)
+        }
+      })
+
+
+    })
+
+    connection.end()
+  }
+
 edita(req, res) {
     let connection = connectionFactory()
     let produtoDao = new ProdutoDao(connection)

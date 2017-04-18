@@ -2,6 +2,11 @@ function ProdutoDao(connection) {
   this._connection = connection
 }
 
+ProdutoDao.prototype.exclui = function(id,callback) {
+ // console.log('det :' +id);
+  this._connection.query('delete  FROM livros where id = '+id, callback)
+}
+
 ProdutoDao.prototype.edita = function(id,callback) {
  // console.log('det :' +id);
   this._connection.query('SELECT * FROM livros where id = '+id, callback)
