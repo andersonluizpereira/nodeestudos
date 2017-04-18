@@ -21,7 +21,7 @@
                     <tbody>
                       <% livros.map(function(livro) { %>
                         <tr>
-                            <td><a href="/produtos/<%= livro.id %>" class="btn btn-info"><%= livro.id %></a></td>
+                            <td><a href="/produtos/detalhe/<%= livro.id %>" class="btn btn-info"><%= livro.id %></a></td>
                             <td><%= livro.titulo %></td>
                             <td><%= livro.preco %></td>
                             <td><p><%= livro.descricao %></p></td>

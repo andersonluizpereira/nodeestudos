@@ -21,7 +21,7 @@
                             <td><%= livro.titulo %></td>
                             <td><%= livro.preco %></td>
                             <td><p><%= livro.descricao %></p></td>
-                            <td><a href="/produtos/<%= livro.id %>" class="btn btn-info"><%= livro.id %>Editar</a><a href="/produtos/<%= livro.id %>" class="btn btn-warning"><%= livro.id %>Excluir</a></td>
+                            <td><a href="/produtos/editar/<%= livro.id %>" class="btn btn-info">Editar</a><a href="/produtos/<%= livro.id %>" class="btn btn-warning">Excluir</a></td>
                         </tr>
                       <% }) %>
                     </tbody>
